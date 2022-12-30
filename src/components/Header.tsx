@@ -1,6 +1,5 @@
 import { Toolbar } from 'primereact/toolbar';
 import { Fragment } from 'react';
-import{MetamaskConnect} from './metamask/MetamaskConnect'
 import { Button } from 'primereact/button';
 import './header.css'
 

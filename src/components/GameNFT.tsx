@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 import { ABICollection } from './config/smartContract'
-import { Contract } from "@ethersproject/contracts"
-import { useCall } from "@usedapp/core"
 const pos_Contract = "0x611b1440396121123587A3f9A4E838c56753fF0e"
 
 enum Mint {
@@ -16,28 +14,13 @@ enum Mint {
   GIANTS
 }
 
-function useTokenBalance(tokenAddress: string) {
-  const { value, error } =
-    useCall(
-        tokenAddress && {
-          contract: new Contract(tokenAddress, ABICollection), // instance of called contract
-          method: "balanceOf", // Method to be called
-          args: ["0xa33CF97c010F9E4bB06d0851E5BC3a6C02F85739"], // Method arguments - address to be checked for balance
-        }
-    ) ?? {};
-  if(error) {
-    console.error(error.message)
-    return undefined
-  }
-  return value?.[0]
-}
+
 
 
 
 export const GameNFT = () =>
 {
-  console.log(useTokenBalance(pos_Contract));
-  
+ 
   const [displayWolfRare, setdisplayWolfRare] = useState(false);
   const [displayWolfEpic, setdisplayWolfEpic] = useState(false);
   const [displayWolfLegendary, setdisplayWolfLegendary] = useState(false);
