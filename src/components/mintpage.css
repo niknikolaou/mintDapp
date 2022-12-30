@@ -1,0 +1,99 @@
+@media only screen and (min-width: 600px) {
+  .level0 {
+    background-color: rgb(57, 62, 70);
+    height: 44rem;
+  }
+
+  .wolfGrid {
+    position: center;
+    width: 120px;
+  }
+
+  .mainGrid {
+    position: absolute;
+    top: 490px;
+    left: 0px;
+    width: 600px;
+  }
+
+  .chess{
+    width: 200px;
+    position: center;
+   }
+}
+
+
+@media only screen and (min-width: 1018px) {
+.level0 {
+    background-color: rgb(57, 62, 70);
+    background-image: url("./config/images/background.png");
+    height: 44rem;
+    box-shadow: 10px 10px;
+    
+  }
+  .mainGrid {
+    position: absolute;
+    top: 490px;
+    left: 300px;
+    width: 900px;
+  }
+
+  .wolfGrid {
+    position: absolute;
+    top: 334px;
+    left: 50px;
+    width: 120px;
+  }
+
+  .wolf{
+    flex: 0 0 auto;
+    padding: gutter;
+    width: 25%;
+  }
+
+   .chess{
+    width: 200px;
+   }
+
+    .col-6 {width: 50%;}
+    
+}
+
+
+@media only screen and (min-width: 1438px) {
+  .level0 {
+      background-color: rgb(57, 62, 70);
+      background-image: url("./config/images/background.png");
+      height: 44rem;
+      box-shadow: 10px 10px;
+      
+    }
+    .mainGrid {
+      position: absolute;
+      top: 490px;
+      left: 600px;
+      width: 900px;
+    }
+
+    .wolfGrid {
+      position: absolute;
+      top: 334px;
+      left: 50px;
+      width: 120px;
+    }
+  
+    .wolf{
+      flex: 0 0 auto;
+      padding: gutter;
+      width: 40%;
+    }
+  
+     .chess{
+      width: 200px;
+     }
+  
+      .col-6 {width: 50%;}
+      
+  }
+
+  
