@@ -10,10 +10,11 @@ import {Footer} from './components/Footer';
 import { GameNFT } from './components/GameNFT';
 
 
+
 function App() {
-  
    return (
     <div className="App"  >
+
       <Header/>
 
       <div className="box1">

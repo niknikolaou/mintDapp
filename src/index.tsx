@@ -5,16 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThirdwebProvider, ChainId } from "@thirdweb-dev/react";
 
+// This is the chainId your dApp will work on.
+const activeChainId = ChainId.Mumbai;
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-
-
 root.render(
   <React.StrictMode>
+     <ThirdwebProvider desiredChainId={activeChainId}>
     <App/>
+    </ThirdwebProvider>
   </React.StrictMode>
 );
 

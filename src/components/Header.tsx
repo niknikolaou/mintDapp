@@ -1,6 +1,7 @@
 import { Toolbar } from 'primereact/toolbar';
 import { Fragment } from 'react';
 import { Button } from 'primereact/button';
+import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 import './header.css'
 
 
@@ -21,7 +22,7 @@ const leftContents = (
 
 const rightContents = (
     <Fragment>
-       
+       <ConnectWallet />
     </Fragment>
 );
 
