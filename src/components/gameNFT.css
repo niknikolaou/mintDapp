@@ -213,6 +213,13 @@
     font-family: ClashDisplay-Medium;
   }
 
+  .boxMain{
+    height: 780px;
+    width: 1170px;
+    margin: 0 auto;
+    position: relative;
+  }
+
 
 
   

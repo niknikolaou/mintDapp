@@ -2,7 +2,7 @@ import { Toolbar } from 'primereact/toolbar';
 import { Fragment } from 'react';
 import { Button } from 'primereact/button';
 import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
-import { useNetworkMismatch, useNetwork, ChainId } from "@thirdweb-dev/react";
+import { useNetworkMismatch, useNetwork, ChainId, } from "@thirdweb-dev/react";
 
 import './header.css'
 
@@ -16,13 +16,17 @@ export const Header = () =>{
 const isMismatched = useNetworkMismatch();
 const [, switchNetwork] = useNetwork();
 const address = useAddress();
-console.log(isMismatched);
+
 
 
 const leftContents = (
     <Fragment>
-         <div>
-         <div>{isMismatched}</div>
+               <div>
+      {isMismatched !== true? (
+        <div className="font-italic   p-2">Unchain your Wolf</div>
+      ) : (
+        <Button label='Switch to the correct Network' onClick={() => switchNetwork?.(ChainId.Mumbai)} />
+      )}
     </div>
     </Fragment>
 );

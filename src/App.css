@@ -13,12 +13,7 @@
   margin: 0 auto;
   position: relative;
 }
-.box2{
-  height: 100px;
-  width: 100px;
-  position: absolute;
-  
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

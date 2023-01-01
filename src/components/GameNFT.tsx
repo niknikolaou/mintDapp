@@ -1,9 +1,16 @@
 import './gameNFT.css';
 import React, { useState } from 'react';
+import { Toolbar } from 'primereact/toolbar';
+import { Fragment } from 'react';
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
+import { ThirdwebSDK } from '@thirdweb-dev/sdk';
+import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
+import { useNetworkMismatch, useNetwork, ChainId, } from "@thirdweb-dev/react";
 import { ABICollection } from './config/smartContract'
-const pos_Contract = "0x611b1440396121123587A3f9A4E838c56753fF0e"
+const pos_Contract = "0x611b1440396121123587A3f9A4E838c56753fF0e";
+const sdk = new ThirdwebSDK("mumbai");
+
 
 enum Mint {
   RareWolf,
@@ -14,13 +21,34 @@ enum Mint {
   GIANTS
 }
 
-
-
-
-
 export const GameNFT = () =>
 {
- 
+
+  const isMismatched = useNetworkMismatch();
+  const [, switchNetwork] = useNetwork();
+  const address = useAddress();
+  const [rareWolf, setrareWolf] = useState('');
+
+
+  const fetchData = async () => {
+    const contract = await sdk.getContractFromAbi(pos_Contract, ABICollection);
+    //const balance = await contract.call("daoAddress", address);
+    //console.log(`Updated balance ${balance / 1e18}`);
+    //const wolf_collection = await sdk.getContractFromAbi(pos_Contract, ABICollection);
+    const balance = await contract.call("WolfCollection", 0);
+        console.log( {balance });
+  };
+
+  const RareWolf = async () => {
+    const contract = await sdk.getContractFromAbi(pos_Contract, ABICollection);
+    const res  = await contract.call("WolfCollection", 0);
+    setrareWolf(res);
+  };
+
+  React.useEffect(() => {
+    fetchData();
+  }, []);
+  
   const [displayWolfRare, setdisplayWolfRare] = useState(false);
   const [displayWolfEpic, setdisplayWolfEpic] = useState(false);
   const [displayWolfLegendary, setdisplayWolfLegendary] = useState(false);
@@ -43,7 +71,10 @@ export const GameNFT = () =>
 
     switch(option){
     case Mint.RareWolf:
+      RareWolf();
       dialogFuncMap[`displayWolfRare`](true);
+      console.log(rareWolf[4] );
+
       if (position)
         setPosition(position);
     break;
@@ -92,8 +123,28 @@ export const GameNFT = () =>
         </div>
     );
 }
+const leftContents = (
+  <Fragment>
+                    <div>
+      {isMismatched !== true? (
+        <div className="font-italic   p-2">Welcome, To Path of Salvation!</div>
+      ) : (
+        <Button label='Switch to the correct Network' onClick={() => switchNetwork?.(ChainId.Mumbai)} />
+      )}
+    </div>
+  </Fragment>
+);
 
-    return    <div>
+const rightContents = (
+  <Fragment>
+     <ConnectWallet />
+  </Fragment>
+);
+
+
+    return<>
+    <Toolbar left={leftContents} right={rightContents} className="surface-50 opacity-100 shadow-8"/>
+    <div className='boxMain'>
     <img
       src="/playground_assets/background.png"
       alt="Background"
@@ -135,27 +186,15 @@ export const GameNFT = () =>
         </span>
       </div>
     </div>
-    <Dialog header="PLANETARS" visible={displayPLANETARS} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '50vw'}} footer={renderFooter()}>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <Dialog header="PLANETARS" visible={displayPLANETARS} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '15vw'}} footer={renderFooter()}>
+                    <p>SmartContract Is not Ready Yet!</p>
       </Dialog>
-      <Dialog header="MESOPLANETS" visible={displayMESOPLANETS} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '50vw'}} footer={renderFooter()}>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <Dialog header="MESOPLANETS" visible={displayMESOPLANETS} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '15vw'}} footer={renderFooter()}>
+                    <p>SmartContract Is not Ready Yet!</p>
       </Dialog>
-      <Dialog header="GIANTS PLANETS" visible={displayGIANTS} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '50vw'}} footer={renderFooter()}>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <Dialog header="GIANTS PLANETS" visible={displayGIANTS} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '15vw'}} footer={renderFooter()}>
+                    <p>SmartContract Is not Ready Yet!</p>
       </Dialog>
-
-
-
 
     <Dialog header="Unchained Wolf Rare" visible={displayWolfRare} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '15vw'}} footer={renderFooter()}>
                     <div className="text-900 text-l mb-3 font-medium">Minted 100/5000</div>
@@ -166,18 +205,13 @@ export const GameNFT = () =>
                     </p>
                     <Button label="Mint Wolf Rare" icon="pi pi-angle-double-down" onClick={() => onHide()} autoFocus />
       </Dialog>
-      <Dialog header="Unchained Wolf Epic" visible={displayWolfEpic} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '50vw'}} footer={renderFooter()}>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <Dialog header="Unchained Wolf Epic" visible={displayWolfEpic} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '15vw'}} footer={renderFooter()}>
+                    <p>Soon More..</p>
       </Dialog>
-      <Dialog header="Unchained Wolf Legendary" visible={displayWolfLegendary} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '50vw'}} footer={renderFooter()}>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <Dialog header="Unchained Wolf Legendary" visible={displayWolfLegendary} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '15vw'}} footer={renderFooter()}>
+                    <p>Soon More..</p>
       </Dialog>
   </div>
+  </>
     
 }
