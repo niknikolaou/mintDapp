@@ -220,6 +220,30 @@
     position: relative;
   }
 
+  @media only screen and (max-width: 1550px) {
+    body {
+      background-color: rgb(32, 137, 173);
+    }
+    .background {
+      height: 550px;
+    }
+
+    .planets {
+      top: 10px;
+
+    }
+
+    .chests {
+      top: 300px;
+
+    }
+  
+    .boxMain{
+      height: 540px;
+    }
+
+  }
+
 
 
   

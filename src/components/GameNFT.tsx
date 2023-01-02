@@ -1,4 +1,8 @@
 import './gameNFT.css';
+import 'primereact/resources/themes/vela-blue/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import 'primeflex/primeflex.css'
 import React, { useState } from 'react';
 import { Toolbar } from 'primereact/toolbar';
 import { Fragment } from 'react';
@@ -127,7 +131,7 @@ const leftContents = (
   <Fragment>
                     <div>
       {isMismatched !== true? (
-        <div className="font-italic   p-2">Welcome, To Path of Salvation!</div>
+        <div className="font-italic p-2 text-white">Welcome, To Path of Salvation!</div>
       ) : (
         <Button label='Switch to the correct Network' onClick={() => switchNetwork?.(ChainId.Mumbai)} />
       )}
