@@ -1,5 +1,5 @@
-import './mintPage.css'
 import 'primereact/resources/primereact.min.css';
+import './main.css'
 import React, { useState } from 'react';
 import { Fragment } from 'react';
 import { Toolbar } from 'primereact/toolbar';
