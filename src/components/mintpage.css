@@ -1,99 +1,150 @@
-@media only screen and (min-width: 600px) {
-  .level0 {
-    background-color: rgb(57, 62, 70);
-    height: 44rem;
-  }
 
-  .wolfGrid {
-    position: center;
-    width: 120px;
-  }
+    
+    /* Style for top bar */
+    .top-bar {
+      background-color: rgba(255, 255, 255, 0);
+      border: none;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
 
-  .mainGrid {
-    position: absolute;
-    top: 490px;
-    left: 0px;
-    width: 600px;
-  }
+    }
 
-  .chess{
-    width: 200px;
-    position: center;
-   }
+    body{
+      background-image: url('images/blur_background.jpg');
+      background-size: cover;
+    }
+    
+    /* Style for main body */
+    .main-body {
+
+        background-image: url('images/background2.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position:  top 0px center !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0 100px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        height: 100%;
+
 }
 
+.item {
+    width: calc(80% / 3);
+    text-align: center;
+    cursor: pointer;
+    padding-top:  170px;
+  }
 
-@media only screen and (min-width: 1018px) {
-.level0 {
-    background-color: rgb(57, 62, 70);
-    background-image: url("./config/images/background.png");
-    height: 44rem;
-    box-shadow: 10px 10px;
+  .rare:hover {
+    content: url('images/chest1open.png');
+  }
+
+  .epic:hover{
+    content: url('images/chest2open.png');
+  }
+
+  .legendary:hover{
+    content: url('images/chest3open.png');
+  }
+
+  .planetars:hover{
+    content: url('images/planetars_open.png');
+  }
+  .mesoplanets:hover{
+    content: url('images/mesoplanets_open.png');
+  }
+  .grandplanets:hover{
+    content: url('images/grand_planets_open.png');
+  }
+          /* Style for the image */
+    .image {
+        width: 60%;
+        height: 50%; /* Adjust the height as needed */
+        object-fit: cover;
+      }
+
+          /* Style for the title */
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 1px 0;
+        color: rgba(255, 255, 255, 1);
+        font-family: ClashDisplay-Medium;
+      }
     
-  }
-  .mainGrid {
-    position: absolute;
-    top: 490px;
-    left: 300px;
-    width: 900px;
-  }
+    /* Style for footer */
+    .footer {
+      margin-top: 10px;
 
-  .wolfGrid {
-    position: absolute;
-    top: 334px;
-    left: 50px;
-    width: 120px;
-  }
-
-  .wolf{
-    flex: 0 0 auto;
-    padding: gutter;
-    width: 25%;
-  }
-
-   .chess{
-    width: 200px;
-   }
-
-    .col-6 {width: 50%;}
+    }
     
-}
+    /* Media queries for responsive design */
+    @media (max-width: 1000px) {
+      /* Style for tablets */
+      .main-body {
+        background-image: url('images/blur_background.jpg');
+        background-size: cover;
+      }
+      .item {
+        width: 48%;
+        
+      }
 
+      .title{
+        font-size: 14px;
+      }
 
-@media only screen and (min-width: 1438px) {
-  .level0 {
-      background-color: rgb(57, 62, 70);
-      background-image: url("./config/images/background.png");
-      height: 44rem;
-      box-shadow: 10px 10px;
+    }
+    
+    @media (max-width: 768px) {
+      /* Style for phones */
+      .item {
+        width: 50%;
+        padding-top:  100px;
       
-    }
-    .mainGrid {
-      position: absolute;
-      top: 490px;
-      left: 600px;
-      width: 900px;
+      }
+
+      .title{
+        font-size: 10px;
+      }
+
+      .image{
+        width: 100%;
+      }
+
+
+
     }
 
-    .wolfGrid {
-      position: absolute;
-      top: 334px;
-      left: 50px;
-      width: 120px;
+    @font-face{
+      font-family: ClashDisplay-Medium;
+      src: url(./config/ClashDisplay-Medium.ttf);
     }
-  
-    .wolf{
-      flex: 0 0 auto;
-      padding: gutter;
-      width: 40%;
-    }
-  
-     .chess{
-      width: 200px;
-     }
-  
-      .col-6 {width: 50%;}
-      
-  }
 
-  
+    @keyframes rotate {
+      0% {
+        transform: translateX(50px) rotate(0deg);
+      }
+      100% {
+        transform: translateX(50px) rotate(360deg);
+      }
+    }
+    
+    .planet {
+      animation: rotate 40s linear infinite;
+    }
+
+    .mid-planet {
+      animation: rotate 25s linear infinite;
+    }
+

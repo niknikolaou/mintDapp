@@ -190,17 +190,17 @@ const rightContents = (
         </span>
       </div>
     </div>
-    <Dialog header="PLANETARS" visible={displayPLANETARS} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '15vw'}} footer={renderFooter()}>
+    <Dialog header="PLANETARS" visible={displayPLANETARS} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '35vw'}} footer={renderFooter()}>
                     <p>SmartContract Is not Ready Yet!</p>
       </Dialog>
-      <Dialog header="MESOPLANETS" visible={displayMESOPLANETS} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '15vw'}} footer={renderFooter()}>
+      <Dialog header="MESOPLANETS" visible={displayMESOPLANETS} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '35vw'}} footer={renderFooter()}>
                     <p>SmartContract Is not Ready Yet!</p>
       </Dialog>
-      <Dialog header="GIANTS PLANETS" visible={displayGIANTS} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '15vw'}} footer={renderFooter()}>
+      <Dialog header="GIANTS PLANETS" visible={displayGIANTS} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '35vw'}} footer={renderFooter()}>
                     <p>SmartContract Is not Ready Yet!</p>
       </Dialog>
 
-    <Dialog header="Unchained Wolf Rare" visible={displayWolfRare} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '15vw'}} footer={renderFooter()}>
+    <Dialog header="Unchained Wolf Rare" visible={displayWolfRare} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '35vw'}} footer={renderFooter()}>
                     <div className="text-900 text-l mb-3 font-medium">Minted 100/5000</div>
                     <p>Cost: 1 ether<br/>
                     <br/>Low Oxygen Rewards.
@@ -209,10 +209,10 @@ const rightContents = (
                     </p>
                     <Button label="Mint Wolf Rare" icon="pi pi-angle-double-down" onClick={() => onHide()} autoFocus />
       </Dialog>
-      <Dialog header="Unchained Wolf Epic" visible={displayWolfEpic} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '15vw'}} footer={renderFooter()}>
+      <Dialog header="Unchained Wolf Epic" visible={displayWolfEpic} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '35vw'}} footer={renderFooter()}>
                     <p>Soon More..</p>
       </Dialog>
-      <Dialog header="Unchained Wolf Legendary" visible={displayWolfLegendary} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '15vw'}} footer={renderFooter()}>
+      <Dialog header="Unchained Wolf Legendary" visible={displayWolfLegendary} onHide={() => onHide()} breakpoints={{'960px': '75vw'}} style={{width: '35vw'}} footer={renderFooter()}>
                     <p>Soon More..</p>
       </Dialog>
   </div>

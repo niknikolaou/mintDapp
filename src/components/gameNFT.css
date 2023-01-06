@@ -8,6 +8,7 @@
   }
   .planets {
     top: 60px;
+    left: 10px;
     width: 1120px;
     height: 344px;
     display: flex;
@@ -26,8 +27,29 @@
     background-color: transparent;
   }
 
+  .chests {
+    top: 512px;
+    left: 47px;
+    width: 1076px;
+    height: 268px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+
   .mesoPlanets {
-    left: 290px;
+    left: 300px;
     width: 400px;
     height: 300px;
     display: flex;
@@ -54,21 +76,9 @@
 
 
 
-  .viper {
-    width: 363px;
-    height: 197px;
-    border-color: transparent;
-    background: url('./images/planetars.png') no-repeat;
-	  object-fit: contain;
-    cursor: pointer;
-  }
-
-  .viper:hover{
-    background: url('./images/planetars_open.png') no-repeat;
-  }
 
   .giants {
-    left: 690px;
+    left: 700px;
     width: 432px;
     height: 371px;
     display: flex;
@@ -88,26 +98,7 @@
     background: url('./images/grand_planets_open.png') no-repeat;
   }
 
-  .chests {
-    top: 512px;
-    left: 47px;
-    width: 1076px;
-    height: 268px;
-    display: flex;
-    padding: 0;
-    position: absolute;
-    align-self: auto;
-    box-sizing: border-box;
-    align-items: flex-start;
-    flex-shrink: 1;
-    border-color: transparent;
-    border-style: none;
-    border-width: 0;
-    border-radius: 0px 0px 0px 0px;
-    flex-direction: row;
-    justify-content: flex-start;
-    background-color: transparent;
-  }
+
 
   .legendaryChest {
     top: 0px;
@@ -189,6 +180,29 @@
     background: url('./images/chest1open.png') no-repeat;
   }
 
+  
+  .viper {
+    width: 363px;
+    height: 197px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    flex-direction: row;
+    background: url('./images/planetars.png') no-repeat;
+    cursor: pointer;
+  }
+
+  .viper:hover{
+    background: url('./images/planetars_open.png') no-repeat;
+  }
+
 
   @font-face{
     font-family: ClashDisplay-Medium;
@@ -230,16 +244,51 @@
 
     .planets {
       top: 10px;
-
     }
 
     .chests {
       top: 300px;
-
     }
   
     .boxMain{
       height: 540px;
+    }
+
+  }
+
+  @media screen and (max-width: 1050px) {
+    .background {
+      width: 1020px;
+    }
+
+
+    .planets {
+      top: 10px;
+    }
+
+    .giants {
+      left: 620px;
+      width: 432px;
+      height: 371px;
+
+    }
+    .mesoPlanets{
+      left: 260px;
+    }
+
+    .viper{
+      left: -40px;
+    }
+
+    .chests{
+      left: 0px;
+    }
+    .epicChest{
+      left: 350px;
+    }
+
+    .legendaryChest{
+      left: 700px;
     }
 
   }

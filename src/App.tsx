@@ -7,18 +7,18 @@ import 'primeflex/primeflex.css'
 
 import {Footer} from './components/Footer';
 import { GameNFT } from './components/GameNFT';
+import {MintPage} from './components/MintPage';
 
 
 
 function App() {
    return (
     <div className="App"  >
-          <GameNFT/>
-      <br></br>
+          <MintPage/>
+     {/* <br></br>
       <div className="flex align-items-center justify-content-center card-container"> 
-        <Footer/>
-      </div>
-
+   <Footer/>
+      </div>*/}
     </div>
   );
 }

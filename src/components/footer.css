@@ -143,7 +143,7 @@
 .button-media .template .p-button.discord:focus {
     box-shadow: 0 0 0 1px var(--bluegray-500);
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 760px) {
     .button-media .p-button {
         margin-bottom: 0.5rem;
     }
@@ -153,5 +153,8 @@
     }
     .button-media .p-buttonset .p-button {
         margin-bottom: 0;
+    }
+    .button-media .template .p-button i {
+        line-height: 1rem;
     }
 }
