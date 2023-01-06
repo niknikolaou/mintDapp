@@ -131,15 +131,16 @@
 
     @keyframes rotate {
       0% {
-        transform: translateX(50px) rotate(0deg);
+        transform:  rotate(0deg);
       }
       100% {
-        transform: translateX(50px) rotate(360deg);
+        transform:  rotate(-360deg);
       }
     }
     
     .planet {
       animation: rotate 40s linear infinite;
+
     }
 
     .mid-planet {
