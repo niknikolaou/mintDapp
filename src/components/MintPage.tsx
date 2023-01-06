@@ -27,7 +27,7 @@ export const MintPage = () =>{
 /**Hooks and Functions***************/
 const isMismatched = useNetworkMismatch();
 const [, switchNetwork] = useNetwork();
-const address = useAddress();
+//const address = useAddress();
 const [rareWolf, setrareWolf] = useState('');
 
 /**********************************/
