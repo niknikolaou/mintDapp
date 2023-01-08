@@ -146,4 +146,16 @@
     .mid-planet {
       animation: rotate 25s linear infinite;
     }
+    table {
+      margin: auto; /* Center the table */
+    }
+    
+    td {
+      text-align: left; /* Align the content to the left side of the table */
+    }
+    
+    td::before {
+      content: "🐺 "; /* Use the wolf emoji as the bullet point */
+    }
+   
 

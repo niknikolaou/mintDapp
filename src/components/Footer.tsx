@@ -1,6 +1,10 @@
 import { Button } from 'primereact/button';
 import './footer.css';
 
+function openURL(url:string) {
+    window.open(url);
+  }
+
 export const Footer = () =>{
     return     <div className="button-media">
             <div className="template">
@@ -16,7 +20,7 @@ export const Footer = () =>{
                     <i className="pi pi-twitter px-2"></i>
                     <span className="px-3">Twitter</span>
                 </Button>
-                <Button className="discord p-0" aria-label="Discord">
+                <Button className="discord p-0" aria-label="Discord" onClick={() => openURL('https://discord.gg/wNkzRCVvuB')}>
                     <i className="pi pi-discord px-2"></i>
                     <span className="px-3">Discord</span>
                 </Button>
