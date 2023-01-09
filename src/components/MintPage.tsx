@@ -41,9 +41,9 @@ console.log(isWhitelist);
 const leftContents = (
    <Fragment>
       <div>
-       {isMismatched !== true? (<div className="font-italic p-2 text-white">Welcome, To Path of Salvation!
+       {isMismatched !== true? (<div className="font-italic p-2 text-white">Welcome,
 
-       {isWhitelist === true? (<div className="font-italic p-2 text-white">You are on Whitelist!</div>) : (<div className="font-italic p-2 text-white">Your are not in Whitelist! Join to discord more details..</div>)}
+       {isWhitelist === true? ('You are on Whitelist!') : ('Your are not in Whitelist! Join to discord more details..')}
 
       </div>) : (<Button label='Switch to the correct Network' onClick={() => switchNetwork?.(ChainId.Mumbai)} /> )}
      </div>
