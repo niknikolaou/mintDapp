@@ -192,7 +192,7 @@ const RareWolf = async () => {
      </div>
      <div className="item" onClick={() => onClick(Mint.GIANTS)}>
         <div className="title">GIANTS PLANETS</div>
-        <img className="image grandplanets planet" src="images/grand_planets.png" alt="GIANTS PLANETS"/>
+        <img className="image grandplanets " src="images/grand_planets.png" alt="GIANTS PLANETS"/>
      </div>
 
 
